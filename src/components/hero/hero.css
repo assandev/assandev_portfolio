@@ -1,0 +1,251 @@
+/* ===========================
+   Hero Base Canvas
+   =========================== */
+.hero {
+  background: #05040A;
+}
+
+/* ===========================
+   Atmospheric Glow (Left Side)
+   Diffuse purple orb effect
+   =========================== */
+.hero__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Main atmospheric glow - top-left positioned, violet-to-coffee */
+.hero__glow::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  left: -20%;
+  width: 75%;
+  height: 95%;
+  background:
+    /* Deep violet layer - matches gradient start */
+    radial-gradient(ellipse 55% 45% at 30% 40%,
+      rgba(62, 46, 75, 0.7) 0%,
+      rgba(62, 46, 75, 0.35) 45%,
+      transparent 75%),
+    /* Muted violet layer */
+    radial-gradient(ellipse 60% 50% at 25% 25%,
+      rgba(52, 38, 65, 0.85) 0%,
+      rgba(52, 38, 65, 0.45) 40%,
+      transparent 70%),
+    /* Warm coffee layer - matches gradient end */
+    radial-gradient(ellipse 70% 60% at 50% 35%,
+      rgba(68, 46, 28, 0.7) 0%,
+      rgba(68, 46, 28, 0.4) 30%,
+      rgba(68, 46, 28, 0.15) 50%,
+      transparent 80%),
+    /* Dark neutral layer */
+    radial-gradient(ellipse 80% 70% at 40% 50%,
+      rgba(15, 23, 42, 0.6) 0%,
+      rgba(15, 23, 42, 0.35) 40%,
+      rgba(15, 23, 42, 0.18) 60%,
+      transparent 85%);
+  filter: blur(60px);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* Secondary inner glow - violet/coffee blend */
+.hero__glow::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: 0%;
+  width: 50%;
+  height: 60%;
+  background:
+    /* Violet tint */
+    radial-gradient(ellipse 45% 35% at 45% 30%,
+      rgba(58, 48, 70, 0.6) 0%,
+      rgba(58, 48, 70, 0.25) 50%,
+      transparent 80%),
+    /* Muted earth tone */
+    radial-gradient(ellipse 50% 40% at 35% 35%,
+      rgba(52, 50, 40, 0.65) 0%,
+      rgba(52, 50, 40, 0.35) 50%,
+      transparent 80%),
+    /* Warm coffee accent */
+    radial-gradient(ellipse 60% 50% at 50% 45%,
+      rgba(55, 38, 24, 0.7) 0%,
+      rgba(55, 38, 24, 0.35) 40%,
+      transparent 75%);
+  filter: blur(40px);
+  animation: pulse 4s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+/* ===========================
+   Pulse Animation - smooth breathing effect
+   =========================== */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(60px);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+    filter: blur(70px);
+  }
+}
+
+/* ===========================
+   Vignette (edge darkening)
+   =========================== */
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 70% at 50% 50%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* ===========================
+   Hero Content Entrance Animation
+   =========================== */
+.hero-inner {
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   Divider Line Gradient
+   =========================== */
+.divider-line {
+  background: linear-gradient(90deg, transparent, #d4c8b8, transparent);
+}
+
+/* ===========================
+   Navigation Styles
+   =========================== */
+.navbar {
+  background: transparent;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(5, 4, 10, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Logo with Entrance Animation */
+.logo {
+  cursor: pointer;
+  animation: fadeInDown 0.8s ease-out;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #fbecc4;
+  text-shadow:
+    0 0 4px rgba(251, 236, 196, 0.5),
+    0 0 12px rgba(251, 236, 196, 0.3);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Link with Neon Glow Effect */
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: #fbecc4;
+  text-shadow:
+    0 0 4px rgba(251, 236, 196, 0.6),
+    0 0 8px rgba(251, 236, 196, 0.4),
+    0 0 16px rgba(251, 236, 196, 0.3),
+    0 0 32px rgba(251, 236, 196, 0.2);
+}
+
+/* ===========================
+   Button Styles with Hover Glow
+   =========================== */
+.btn-hero {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.btn-hero:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(251, 236, 196, 0.35), inset 0 0 0 1px rgba(251, 236, 196, 0.15);
+}
+
+.btn-hero:hover::before {
+  opacity: 1;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+@media (max-width: 768px) {
+  .hero__glow::before {
+    top: -35%;
+    left: -40%;
+    width: 90%;
+    height: 70%;
+  }
+
+  .hero__glow::after {
+    top: -20%;
+    left: -20%;
+    width: 60%;
+  }
+}

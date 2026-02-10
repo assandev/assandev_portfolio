@@ -1,0 +1,384 @@
+/* ===========================
+   About Section
+   =========================== */
+.about-section {
+  background: #05040A;
+  padding: 6rem 1.5rem;
+  padding-top: 2rem;
+  margin-top: -8rem;
+  scroll-margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* ===========================
+   About Card - Gradient Container
+   =========================== */
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 1000px;
+  width: 100%;
+  padding: 3rem;
+  border-radius: 24px;
+  background:
+    /* Radial fade to black at edges */
+    radial-gradient(ellipse 80% 80% at 50% 50%,
+      transparent 0%,
+      rgba(5, 4, 10, 0.3) 60%,
+      rgba(5, 4, 10, 0.6) 80%,
+      rgba(5, 4, 10, 0.85) 100%),
+    /* Midnight Violet → Dark Coffee gradient */
+    linear-gradient(135deg,
+      rgb(12, 8, 18) 0%,
+      rgb(18, 14, 28) 3%,
+      rgb(28, 20, 40) 6%,
+      rgb(38, 28, 52) 10%,
+      rgb(52, 38, 65) 15%,
+      rgb(62, 46, 75) 22%,
+      rgb(58, 48, 70) 30%,
+      rgb(54, 50, 62) 38%,
+      rgb(50, 52, 55) 46%,
+      rgb(48, 50, 46) 55%,
+      rgb(52, 50, 40) 64%,
+      rgb(58, 48, 36) 72%,
+      rgb(65, 48, 32) 78%,
+      rgb(68, 46, 28) 83%,
+      rgb(55, 38, 24) 88%,
+      rgb(40, 28, 20) 92%,
+      rgb(25, 18, 15) 95%,
+      rgb(16, 12, 12) 97%,
+      rgb(10, 8, 10) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  background-size: 100% 100%, 200% 200%;
+  animation: cloudDrift 15s ease-in-out infinite;
+}
+
+/* Cloud-like drifting animation for the gradient */
+@keyframes cloudDrift {
+  0% {
+    background-position: center, 30% 35%;
+  }
+
+  25% {
+    background-position: center, 65% 30%;
+  }
+
+  50% {
+    background-position: center, 70% 65%;
+  }
+
+  75% {
+    background-position: center, 35% 70%;
+  }
+
+  100% {
+    background-position: center, 30% 35%;
+  }
+}
+
+/* ===========================
+   Level 1 - Profile (Centered)
+   =========================== */
+.about-level-1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Profile Photo */
+.about-profile__photo {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+      rgba(48, 38, 57, 0.7) 0%,
+      rgba(53, 38, 25, 0.5) 50%,
+      rgba(5, 4, 10, 0.8) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.about-profile__photo svg {
+  width: 50%;
+  height: 50%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.about-profile__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-profile__name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.about-profile__title {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1.5rem;
+}
+
+/* GitHub Button */
+.about-profile__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.about-profile__github-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ===========================
+   Level 2 - About Text + Skills
+   =========================== */
+.about-level-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .about-level-2 {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+}
+
+/* About Me Text */
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.about-text strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .about-text {
+    padding-right: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ===========================
+   Skills Section
+   =========================== */
+.about-skills {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ===========================
+   Dropdown Component
+   =========================== */
+.about-dropdown {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
+
+.about-dropdown:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Header/Button */
+.about-dropdown__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.about-dropdown__header span {
+  flex: 1;
+  text-align: center;
+}
+
+.about-dropdown__header:hover {
+  color: #ffffff;
+}
+
+.about-dropdown__header.open {
+  color: #ffffff;
+}
+
+/* Chevron Icon */
+.about-dropdown__chevron {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  position: absolute;
+  right: 1.25rem;
+}
+
+.about-dropdown__header.open .about-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.about-dropdown__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-dropdown__content.open {
+  max-height: 300px;
+}
+
+.about-dropdown__items {
+  padding: 0 1.25rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+/* ===========================
+   Skill Tags
+   =========================== */
+.about-skill-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.about-skill-tag:hover {
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Contact Links
+   =========================== */
+.about-contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.about-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-contact-link:hover {
+  color: #ffffff;
+  background: rgba(15, 23, 42, 0.35);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(15, 23, 42, 0.4);
+  transform: translateY(-2px);
+}
+
+.about-contact-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+@media (max-width: 767px) {
+  .about-card {
+    padding: 2rem;
+  }
+
+  .about-level-1 {
+    padding-bottom: 1.5rem;
+  }
+
+  .about-profile__photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-profile__name {
+    font-size: 1.3rem;
+  }
+
+  .about-text {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+}

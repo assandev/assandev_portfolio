@@ -1,0 +1,105 @@
+/* ===========================
+   Logo Carousel - Infinite Marquee
+   =========================== */
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* Fade edges for smooth visual */
+.logo-carousel::before,
+.logo-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-carousel::before {
+  left: 0;
+  background: linear-gradient(to right, #05040A, transparent);
+}
+
+.logo-carousel::after {
+  right: 0;
+  background: linear-gradient(to left, #05040A, transparent);
+}
+
+/* Track containing all logos */
+.logo-carousel__track {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.logo-carousel:hover .logo-carousel__track {
+  animation-play-state: paused;
+}
+
+/* Individual logo item */
+.logo-carousel__item {
+  flex-shrink: 0;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo-carousel__item img {
+  height: 50px !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: contain;
+  /* Gray/white appearance by default */
+  filter: brightness(0) invert(1) opacity(0.6);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect - warm gold highlight */
+.logo-carousel__item:hover img {
+  /* Approximates #fbecc4 warm gold */
+  filter: brightness(0) saturate(100%) invert(93%) sepia(15%) saturate(500%) hue-rotate(340deg) brightness(103%) contrast(95%);
+  transform: scale(1.1);
+}
+
+/* Large logo variant (e.g., Universidad Nacional) */
+.logo-carousel__item.logo--large img {
+  height: 70px !important;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-carousel__track {
+    gap: 2.5rem;
+  }
+
+  .logo-carousel__item img {
+    height: 35px !important;
+  }
+
+  .logo-carousel__item.logo--large img {
+    height: 50px !important;
+  }
+
+  .logo-carousel::before,
+  .logo-carousel::after {
+    width: 50px;
+  }
+}

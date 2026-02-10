@@ -1,0 +1,99 @@
+/* ===========================
+   Preview Page Layout
+   =========================== */
+.preview-page {
+  background: #05040A;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.preview-label {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  color: #F6F6F7;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.preview-label span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(246, 246, 247, 0.5);
+  margin-top: 0.25rem;
+}
+
+/* ===========================
+   Palette B — Ink Teal + Warm Bronze
+   Brand 1: #123238 | Brand 2: #6F5A4E
+   =========================== */
+.palette-b .about-card {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%,
+      transparent 0%,
+      rgba(5, 4, 10, 0.3) 60%,
+      rgba(5, 4, 10, 0.6) 80%,
+      rgba(5, 4, 10, 0.85) 100%),
+    linear-gradient(135deg,
+      rgb(5, 4, 10) 0%,
+      rgba(18, 39, 43, 0.3) 3%,
+      rgba(17, 50, 58, 0.4) 6%,
+      rgba(18, 50, 56, 0.5) 10%,
+      rgb(18, 50, 56) 22%,
+      rgb(35, 50, 52) 50%,
+      rgb(85, 70, 60) 78%,
+      rgb(95, 73, 60) 85%,
+      rgb(75, 60, 50) 90%,
+      rgb(68, 49, 39) 95%,
+      rgb(83, 53, 37) 98%,
+      rgb(114, 79, 33) 100%) !important;
+}
+
+.palette-b .about-profile__photo {
+  background: linear-gradient(135deg,
+      rgba(18, 50, 56, 0.7) 0%,
+      rgba(111, 90, 78, 0.5) 50%,
+      rgba(5, 4, 10, 0.8) 100%) !important;
+}
+
+/* ===========================
+   Palette C — Midnight Violet → Dark Coffee
+   10-step gradient: #302639 through graphites to #352619
+   Very subtle, dark, cool-to-warm shift
+   =========================== */
+.palette-c .about-card {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%,
+      transparent 0%,
+      rgba(5, 4, 10, 0.3) 60%,
+      rgba(5, 4, 10, 0.6) 80%,
+      rgba(5, 4, 10, 0.85) 100%),
+    linear-gradient(135deg,
+      rgb(10, 8, 15) 0%,
+      rgb(15, 12, 20) 3%,
+      rgb(22, 18, 30) 6%,
+      rgb(30, 24, 38) 10%,
+      rgb(40, 32, 50) 15%,
+      rgb(48, 38, 57) 22%,
+      rgb(47, 40, 55) 30%,
+      rgb(44, 42, 50) 38%,
+      rgb(43, 44, 46) 46%,
+      rgb(41, 43, 40) 55%,
+      rgb(42, 42, 35) 64%,
+      rgb(47, 41, 32) 72%,
+      rgb(51, 40, 28) 78%,
+      rgb(53, 38, 25) 83%,
+      rgb(45, 32, 22) 88%,
+      rgb(35, 25, 18) 92%,
+      rgb(22, 17, 14) 95%,
+      rgb(15, 12, 11) 97%,
+      rgb(10, 8, 10) 100%) !important;
+}
+
+.palette-c .about-profile__photo {
+  background: linear-gradient(135deg,
+      rgba(48, 38, 57, 0.7) 0%,
+      rgba(53, 38, 25, 0.5) 50%,
+      rgba(5, 4, 10, 0.8) 100%) !important;
+}
