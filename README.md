@@ -1,8 +1,8 @@
-# Personal Portfolio v2
+# Personal Portfolio
 
 A dark, modern personal portfolio built with Next.js, TypeScript, and CSS.
 
-![Portfolio Preview](docs/preview.png)
+![Web Portfolio Preview](docs/preview.png)
 
 ## Tech Stack
 
