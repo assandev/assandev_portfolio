@@ -410,6 +410,40 @@
 }
 
 /* ===========================
+   Responsive — Tablet
+   =========================== */
+@media (max-width: 1023px) {
+  .experience-section {
+    padding: 4rem 1rem;
+  }
+
+  .experience-entry {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .experience-card--company {
+    flex: none;
+  }
+
+  .experience-card__location-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-self: flex-start;
+    margin-bottom: 0.25rem;
+  }
+
+  .experience-card__role-title {
+    padding-right: 0;
+  }
+
+  .experience-card__technologies {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===========================
    Responsive — Mobile
    =========================== */
 @media (max-width: 767px) {
@@ -432,5 +466,31 @@
 
   .experience-card {
     padding: 1.5rem;
+  }
+
+  .experience-card__logo {
+    width: 150px;
+    height: 55px;
+  }
+
+  .experience-card__role-title {
+    font-size: 1.05rem;
+    padding-right: 0;
+  }
+
+  .experience-card__location-badge {
+    position: relative;
+    top: auto;
+    right: auto;
+    align-self: flex-start;
+    margin-bottom: 0.25rem;
+  }
+
+  .experience-card__technologies {
+    flex-wrap: wrap;
+  }
+
+  .experience-card__achievements li {
+    font-size: 0.85rem;
   }
 }
