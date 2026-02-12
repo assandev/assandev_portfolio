@@ -43,9 +43,14 @@ export default function Hero() {
 
               <li><a href="#contact" className="nav-link">Contact</a></li>
             </ul>
-            <button className="cv-button rounded-md bg-white px-5 py-2 text-sm font-medium text-[#05040A] transition-all duration-300 hover:bg-[#f0f0f0] hover:-translate-y-0.5">
+            <a
+              href="https://drive.google.com/file/d/1yfGirWwFrS3-DKsZmSoYIO2F5X_Lf32F/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cv-button rounded-md bg-white px-5 py-2 text-sm font-medium text-[#05040A] transition-all duration-300 hover:bg-[#f0f0f0] hover:-translate-y-0.5"
+            >
               View CV
-            </button>
+            </a>
           </div>
         </nav>
 

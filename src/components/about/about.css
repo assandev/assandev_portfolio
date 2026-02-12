@@ -147,7 +147,12 @@
   margin-bottom: 1.5rem;
 }
 
-/* GitHub Button */
+/* Profile Buttons Row */
+.about-profile__buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
 .about-profile__btn {
   display: inline-flex;
   align-items: center;
@@ -157,7 +162,7 @@
   text-decoration: none;
 }
 
-.about-profile__github-icon {
+.about-profile__btn-icon {
   width: 18px;
   height: 18px;
 }
@@ -236,7 +241,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.5rem;
   background: transparent;
   border: none;
   color: rgba(255, 255, 255, 0.85);
@@ -281,75 +286,38 @@
 }
 
 .about-dropdown__content.open {
-  max-height: 300px;
+  max-height: 500px;
 }
 
-.about-dropdown__items {
-  padding: 0 1.25rem 1.25rem;
+.about-dropdown__list {
+  padding: 0 1.5rem 1.25rem;
+  margin: 0;
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
-  justify-content: center;
 }
 
 /* ===========================
-   Skill Tags
+   Skill Items (Bullet List)
    =========================== */
-.about-skill-tag {
-  display: inline-block;
-  padding: 0.5rem 1rem;
+.about-skill-item {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  transition: all 0.3s ease;
-  cursor: default;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 1rem;
+  position: relative;
 }
 
-.about-skill-tag:hover {
-  color: #ffffff;
-  background: rgba(15, 23, 42, 0.35);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 15px rgba(15, 23, 42, 0.4);
-  transform: translateY(-2px);
-}
-
-/* ===========================
-   Contact Links
-   =========================== */
-.about-contact-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.about-contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.about-contact-link:hover {
-  color: #ffffff;
-  background: rgba(15, 23, 42, 0.35);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 15px rgba(15, 23, 42, 0.4);
-  transform: translateY(-2px);
-}
-
-.about-contact-icon {
-  width: 16px;
-  height: 16px;
+.about-skill-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
 }
 
 /* ===========================

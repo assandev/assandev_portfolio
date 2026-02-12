@@ -240,6 +240,8 @@ export default function Experience() {
               className="experience-card experience-card--company"
               style={{ '--card-gradient': exp.company.gradient } as React.CSSProperties}
             >
+              <div className="experience-card__glass" />
+              <div className="experience-card__specular" />
               <div className="experience-card__logo">
                 <Image
                   src={exp.company.logo}
@@ -257,6 +259,8 @@ export default function Experience() {
               className="experience-card experience-card--role"
               style={{ '--card-role-gradient': exp.company.roleGradient } as React.CSSProperties}
             >
+              <div className="experience-card__glass" />
+              <div className="experience-card__specular" />
               <div className="experience-card__location-badge">
                 <LocationIcon location={exp.role.location} />
                 <span>{exp.role.location}</span>

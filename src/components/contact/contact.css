@@ -1,0 +1,326 @@
+/* ===========================
+   Contact Section
+   =========================== */
+.contact-section {
+  background: #05040A;
+  padding: 3rem 1.5rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+}
+
+/* ===========================
+   Section Header
+   =========================== */
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 600px;
+}
+
+.contact-header__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-header__subtitle {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.contact-header__subtitle strong {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+}
+
+/* ===========================
+   Entrance Animation
+   =========================== */
+.contact-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.contact-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   Content Layout
+   =========================== */
+.contact-content {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  align-items: stretch;
+}
+
+/* ===========================
+   Shared Card Base
+   =========================== */
+.contact-form-card,
+.contact-info-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 50%,
+      transparent 0%,
+      rgba(5, 4, 10, 0.3) 60%,
+      rgba(5, 4, 10, 0.6) 80%,
+      rgba(5, 4, 10, 0.85) 100%),
+    linear-gradient(135deg,
+      rgb(12, 8, 18) 0%,
+      rgb(18, 14, 28) 3%,
+      rgb(28, 20, 40) 6%,
+      rgb(38, 28, 52) 10%,
+      rgb(52, 38, 65) 15%,
+      rgb(62, 46, 75) 22%,
+      rgb(58, 48, 70) 30%,
+      rgb(54, 50, 62) 38%,
+      rgb(50, 52, 55) 46%,
+      rgb(48, 50, 46) 55%,
+      rgb(52, 50, 40) 64%,
+      rgb(58, 48, 36) 72%,
+      rgb(65, 48, 32) 78%,
+      rgb(68, 46, 28) 83%,
+      rgb(55, 38, 24) 88%,
+      rgb(40, 28, 20) 92%,
+      rgb(25, 18, 15) 95%,
+      rgb(16, 12, 12) 97%,
+      rgb(10, 8, 10) 100%);
+  background-size: 100% 100%, 200% 200%;
+  animation: contactCardDrift 15s ease-in-out infinite;
+}
+
+.contact-form-card {
+  flex: 1.2;
+}
+
+@keyframes contactCardDrift {
+  0% { background-position: center, 30% 35%; }
+  25% { background-position: center, 65% 30%; }
+  50% { background-position: center, 70% 65%; }
+  75% { background-position: center, 35% 70%; }
+  100% { background-position: center, 30% 35%; }
+}
+
+/* ===========================
+   Form Elements
+   =========================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-form__label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-form__input:focus,
+.contact-form__textarea:focus {
+  border-color: rgba(128, 70, 200, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 12px rgba(128, 70, 200, 0.15);
+}
+
+.contact-form__input:disabled,
+.contact-form__textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.contact-form__textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form__submit {
+  align-self: flex-start;
+  padding: 0.75rem 2rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+}
+
+.contact-form__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Status Messages */
+.contact-form__status {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.contact-form__status--success {
+  color: rgba(16, 185, 129, 0.9);
+}
+
+.contact-form__status--error {
+  color: rgba(239, 68, 68, 0.9);
+}
+
+/* ===========================
+   Right Column — Info Cards
+   =========================== */
+.contact-info {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-card {
+  flex: 1;
+}
+
+.contact-info-card__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+}
+
+.contact-info-card__icon {
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-info-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-info-card__desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.5;
+}
+
+.contact-info-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+/* Contact Links */
+.contact-info-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.contact-info-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+
+.contact-info-card__link svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.contact-info-card__link:hover {
+  color: #ffffff;
+  background: rgba(128, 70, 200, 0.15);
+  border-color: rgba(128, 70, 200, 0.3);
+  box-shadow: 0 0 15px rgba(128, 70, 200, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   Hover Glow on Cards
+   =========================== */
+.contact-form-card:hover,
+.contact-info-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(128, 70, 200, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ===========================
+   Responsive — Mobile
+   =========================== */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+
+  .contact-header__title {
+    font-size: 2rem;
+  }
+
+  .contact-content {
+    flex-direction: column;
+  }
+
+  .contact-form-card,
+  .contact-info {
+    flex: none;
+  }
+}
