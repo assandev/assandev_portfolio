@@ -74,12 +74,16 @@ export default function About() {
         {/* Level 1 - Profile (Centered) */}
         <div className="about-level-1">
           <div className="about-profile">
-            <div className="about-profile__photo">
+            <div
+              className="about-profile__photo"
+              onContextMenu={(e) => e.preventDefault()}
+            >
               <Image
                 src={profilePhoto}
                 alt="Andres Sanchez"
                 fill
                 style={{ objectFit: 'cover' }}
+                draggable={false}
               />
             </div>
 

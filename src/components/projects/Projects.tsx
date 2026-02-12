@@ -196,13 +196,15 @@ export default function Projects() {
               <div className="projects-grid__media">
                 {project.type === 'video' ? (
                   <video
-                    src={project.mediaSrc}
                     autoPlay
                     muted
                     loop
                     playsInline
                     className="projects-grid__video"
-                  />
+                  >
+                    <source src={project.mediaSrc.replace('.mp4', '.webm')} type="video/webm" />
+                    <source src={project.mediaSrc} type="video/mp4" />
+                  </video>
                 ) : (
                   <img
                     src={project.mediaSrc}

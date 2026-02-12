@@ -119,6 +119,10 @@
   justify-content: center;
   margin-bottom: 1.5rem;
   overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 .about-profile__photo svg {
