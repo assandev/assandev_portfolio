@@ -3,39 +3,12 @@
    =========================== */
 .contact-section {
   background: #05040A;
-  padding: 3rem 1.5rem 6rem;
+  padding: 6rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   z-index: 5;
-}
-
-/* ===========================
-   Section Header
-   =========================== */
-.contact-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  max-width: 600px;
-}
-
-.contact-header__title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.contact-header__subtitle {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.5;
-}
-
-.contact-header__subtitle strong {
-  color: rgba(255, 255, 255, 0.85);
-  font-weight: 600;
 }
 
 /* ===========================
@@ -53,30 +26,20 @@
 }
 
 /* ===========================
-   Content Layout
+   Main Card Container
    =========================== */
-.contact-content {
+.contact-card {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   max-width: 1000px;
   width: 100%;
-  align-items: stretch;
-}
-
-/* ===========================
-   Shared Card Base
-   =========================== */
-.contact-form-card,
-.contact-info-card {
-  position: relative;
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.5rem;
   border: 1px solid rgba(255, 255, 255, 0.06);
   box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
   background:
     radial-gradient(ellipse 80% 80% at 50% 50%,
       transparent 0%,
@@ -105,10 +68,15 @@
       rgb(10, 8, 10) 100%);
   background-size: 100% 100%, 200% 200%;
   animation: contactCardDrift 15s ease-in-out infinite;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form-card {
-  flex: 1.2;
+.contact-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(128, 70, 200, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 @keyframes contactCardDrift {
@@ -120,18 +88,163 @@
 }
 
 /* ===========================
+   Left Column — Intro & CTAs
+   =========================== */
+.contact-intro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-intro__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+.contact-intro__desc {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  max-width: 320px;
+}
+
+.contact-intro__desc strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+}
+
+/* ===========================
+   CTA Buttons
+   =========================== */
+.contact-intro__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary — Calendly (Liquid Glass) */
+.contact-btn--primary {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(128, 70, 200, 0.25) 0%,
+      rgba(128, 70, 200, 0.1) 50%,
+      rgba(128, 70, 200, 0.2) 100%
+    );
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  color: #ffffff;
+  border: 1px solid rgba(128, 70, 200, 0.3);
+  box-shadow:
+    0 2px 12px rgba(128, 70, 200, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.contact-btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 60% 50% at 30% 20%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.contact-btn--primary:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(128, 70, 200, 0.35) 0%,
+      rgba(128, 70, 200, 0.15) 50%,
+      rgba(128, 70, 200, 0.3) 100%
+    );
+  border-color: rgba(128, 70, 200, 0.5);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(128, 70, 200, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Ghost — Email & LinkedIn */
+.contact-btn--ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.contact-btn--ghost svg {
+  opacity: 0.7;
+}
+
+.contact-btn--ghost:hover svg {
+  opacity: 1;
+}
+
+.contact-intro__secondary {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-intro__secondary .contact-btn--ghost {
+  flex: 1;
+}
+
+/* ===========================
+   Right Column — Form Card
+   =========================== */
+.contact-form-card {
+  flex: 1.1;
+  border-radius: 16px;
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ===========================
    Form Elements
    =========================== */
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .contact-form__group {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
 .contact-form__label {
@@ -143,7 +256,7 @@
 .contact-form__input,
 .contact-form__textarea {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 0.7rem 0.9rem;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.04);
@@ -161,9 +274,9 @@
 
 .contact-form__input:focus,
 .contact-form__textarea:focus {
-  border-color: rgba(128, 70, 200, 0.5);
+  border-color: rgba(128, 70, 200, 0.4);
   background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 0 12px rgba(128, 70, 200, 0.15);
+  box-shadow: 0 0 12px rgba(128, 70, 200, 0.12);
 }
 
 .contact-form__input:disabled,
@@ -174,14 +287,63 @@
 
 .contact-form__textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
 }
 
+/* Submit Button — Liquid Glass */
 .contact-form__submit {
-  align-self: flex-start;
-  padding: 0.75rem 2rem;
+  width: 100%;
+  padding: 0.8rem;
   font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(128, 70, 200, 0.25) 0%,
+      rgba(128, 70, 200, 0.1) 50%,
+      rgba(128, 70, 200, 0.2) 100%
+    );
+  backdrop-filter: blur(8px) saturate(1.2);
+  -webkit-backdrop-filter: blur(8px) saturate(1.2);
+  border: 1px solid rgba(128, 70, 200, 0.3);
   border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 2px 12px rgba(128, 70, 200, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.contact-form__submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 60% 50% at 30% 20%,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.contact-form__submit:hover {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(128, 70, 200, 0.35) 0%,
+      rgba(128, 70, 200, 0.15) 50%,
+      rgba(128, 70, 200, 0.3) 100%
+    );
+  border-color: rgba(128, 70, 200, 0.5);
+  box-shadow:
+    0 8px 24px rgba(128, 70, 200, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
 }
 
 .contact-form__submit:disabled {
@@ -193,7 +355,8 @@
 /* Status Messages */
 .contact-form__status {
   font-size: 0.85rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+  text-align: center;
 }
 
 .contact-form__status--success {
@@ -205,102 +368,12 @@
 }
 
 /* ===========================
-   Right Column — Info Cards
+   Responsive — Tablet
    =========================== */
-.contact-info {
-  flex: 0.8;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.contact-info-card {
-  flex: 1;
-}
-
-.contact-info-card__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-}
-
-.contact-info-card__icon {
-  width: 32px;
-  height: 32px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.contact-info-card__title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.contact-info-card__desc {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
-  line-height: 1.5;
-}
-
-.contact-info-card__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 0.9rem;
-  text-decoration: none;
-  margin-top: 0.5rem;
-}
-
-/* Contact Links */
-.contact-info-card__links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.contact-info-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  justify-content: center;
-}
-
-.contact-info-card__link svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-.contact-info-card__link:hover {
-  color: #ffffff;
-  background: rgba(128, 70, 200, 0.15);
-  border-color: rgba(128, 70, 200, 0.3);
-  box-shadow: 0 0 15px rgba(128, 70, 200, 0.15);
-  transform: translateY(-2px);
-}
-
-/* ===========================
-   Hover Glow on Cards
-   =========================== */
-.contact-form-card:hover,
-.contact-info-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow:
-    0 8px 40px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(128, 70, 200, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+@media (max-width: 1023px) {
+  .contact-card {
+    padding: 2rem;
+  }
 }
 
 /* ===========================
@@ -311,16 +384,25 @@
     padding: 4rem 1rem;
   }
 
-  .contact-header__title {
+  .contact-card {
+    flex-direction: column;
+    padding: 1.75rem;
+    gap: 1.5rem;
+  }
+
+  .contact-intro__title {
     font-size: 2rem;
   }
 
-  .contact-content {
+  .contact-intro__desc {
+    max-width: none;
+  }
+
+  .contact-intro__secondary {
     flex-direction: column;
   }
 
-  .contact-form-card,
-  .contact-info {
+  .contact-intro__secondary .contact-btn--ghost {
     flex: none;
   }
 }
